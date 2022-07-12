@@ -8,6 +8,13 @@ An Ansible Playbook that installs the Cloudera stack on RHEL/CentOS
 
 **Please do not use Ansible 2.9.0**. This version has an [issue with templating](https://github.com/ansible/ansible/issues/64745) which causes the playbook execution to fail. Instead, use any 2.8.x version or a later 2.9.x version as these are not affected. 
 
+On db_server node, if mariadb is already insatlled plz remove it
+```
+yum remove mariadb -y
+rm -rf /var/lib/mysql
+rm -rf /etc/my.cnf
+```
+
 * Create Ansible configuration (optional):
 
 ```ini
