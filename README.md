@@ -28,7 +28,7 @@ scp_if_ssh = True
 $ vi ~/ansible_hosts
 
 [scm_server]
-host1.example.com
+pulse.ops.iti.acceldata.dev ansible_ssh_private_key_file="~/.ssh/id_rsa" ansible_user=root
 
 [db_server]
 host2.example.com
