@@ -22,9 +22,9 @@ cdh_services:
   - type: impala
     scratch_dirs: /tmp/impala
 
-  - type: oozie
+#  - type: oozie
 
-  - type: sentry
+#  - type: sentry
 
   - type: spark
 
