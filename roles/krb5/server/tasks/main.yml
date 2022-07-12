@@ -5,6 +5,7 @@
     name:
     - krb5-libs
     - krb5-server
+    - krb5-workstation
     state: installed
 
 - name: Set kdc.conf
