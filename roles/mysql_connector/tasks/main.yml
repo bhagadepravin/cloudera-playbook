@@ -16,12 +16,10 @@
     path: /usr/share/java/mysql-connector-java.jar
   register: mysql_connector_java
 
-- name: Download MySQL Connector/J 
-  get_url:
-    url: https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.48.zip
-    dest: "{{ tmp_dir }}/mysql-connector-java.zip"
-    checksum: "md5:5da24facd99964f296ecde32abcd2384"
-    mode: 0644
+- name: Download MySQL Connector/J with wget
+  command: "wget https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.48.zip -O {{ tmp_dir }}/mysql-connector-java.zip"
+  args:
+    creates: "{{ tmp_dir }}/mysql-connector-java.zip"
   when: not mysql_connector_java.stat.exists
 
 - name: Extract MySQL Connector/J zip file
